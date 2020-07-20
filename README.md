@@ -13,12 +13,12 @@
 
 ### Usage
 ```shell script
-sudo sh -c "curl -L 'https://raw.githubusercontent.com/technote-space/python-setup/bin/setup.sh' | bash -s -- <version> <name>"
+curl -L 'https://raw.githubusercontent.com/technote-space/python-setup/bin/setup.sh' | bash -s -- <version> <name>
 ```
 
 e.g. 
 ```shell script
-sudo sh -c "curl -L 'https://raw.githubusercontent.com/technote-space/python-setup/bin/setup.sh' | bash -s -- 3.7.7 test"
+curl -L 'https://raw.githubusercontent.com/technote-space/python-setup/bin/setup.sh' | bash -s -- 3.7.7 test
 ```
 
 ### Detail

@@ -28,9 +28,9 @@ else
   # for Linux
   # install packages for pyenv (@see https://github.com/pyenv/pyenv/wiki/Common-build-problems)
   if command -v yum 1>/dev/null 2>&1; then
-    yum install -y @development zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel findutils
+    sudo yum install -y @development zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel findutils
   else
-    apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+    sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
   fi
 
   if ! command -v pyenv 1>/dev/null 2>&1; then
@@ -52,11 +52,11 @@ if ! grep <"$PROFILE" -q pyenv; then
   # https://github.com/pyenv/pyenv-virtualenv
 
   # shellcheck disable=SC2016
-  echo 'export PYENV_ROOT="$HOME/.pyenv"' | tee -a "$PROFILE"
+  echo 'export PYENV_ROOT="$HOME/.pyenv"' | sudo tee -a "$PROFILE"
   # shellcheck disable=SC2016
-  echo 'export PATH="$PYENV_ROOT/bin:$PATH"' | tee -a "$PROFILE"
+  echo 'export PATH="$PYENV_ROOT/bin:$PATH"' | sudo tee -a "$PROFILE"
   # shellcheck disable=SC2016
-  echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\n  eval "$(pyenv virtualenv-init -)"\nfi' | tee -a "$PROFILE"
+  echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\n  eval "$(pyenv virtualenv-init -)"\nfi' | sudo tee -a "$PROFILE"
 fi
 
 REQUIRED_RUN_SOURCE=
