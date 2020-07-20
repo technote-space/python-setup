@@ -2,11 +2,6 @@
 
 set -e
 
-if [ "$(whoami)" != "root" ]; then
-  echo "Require root privilege."
-  exit 1
-fi
-
 if [[ $# -lt 2 ]]; then
   echo "usage: $0 <python version> <name>"
   exit 1
