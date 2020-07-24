@@ -1,6 +1,6 @@
 ## Setup Python
 
-Setup script for python.
+Setup script for Python.
 
 ## Table of Contents
 
