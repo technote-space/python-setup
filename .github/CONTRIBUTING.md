@@ -1,7 +1,7 @@
 # Contributing
-[issues]: https://github.com/technote-space/github-actions-workflows/issues
-[fork]: https://github.com/technote-space/github-actions-workflows/fork
-[pr]: https://github.com/technote-space/github-actions-workflows/compare
+[issues]: https://github.com/technote-space/python-setup/issues
+[fork]: https://github.com/technote-space/python-setup/fork
+[pr]: https://github.com/technote-space/python-setup/compare
 [code-of-conduct]: CODE_OF_CONDUCT.md
 
 When contributing to this repository, please first discuss the change you wish to make via [issue][issues] with the owners of this repository before making a change. 
