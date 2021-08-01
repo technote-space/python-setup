@@ -49,7 +49,7 @@ if ! grep <"$PROFILE" -q pyenv; then
   # shellcheck disable=SC2016
   echo 'export PYENV_ROOT="$HOME/.pyenv"' | sudo tee -a "$PROFILE"
   # shellcheck disable=SC2016
-  echo 'export PATH="$PYENV_ROOT/bin:$PATH"' | sudo tee -a "$PROFILE"
+  echo 'export PATH="$PYENV_ROOT/shims:$PATH"' | sudo tee -a "$PROFILE"
   # shellcheck disable=SC2016
   echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\n  eval "$(pyenv virtualenv-init -)"\nfi' | sudo tee -a "$PROFILE"
 fi
