@@ -64,7 +64,11 @@ fi
 VERSION=${1}
 ESCAPED="$(printf '%s' "$VERSION" | sed 's/[.[\*^$]/\\&/g')"
 if ! pyenv versions --bare --skip-aliases | grep -e "^$ESCAPED$" 1>/dev/null 2>&1; then
-  pyenv install "$VERSION"
+  if [[ $(uname -s) == 'Darwin' ]] && [[ $(uname -m) == 'arm64' ]]; then
+    arch -arch x86_64 env PATH=${PATH/\/opt\/homebrew\/bin:/} pyenv install "$VERSION"
+  else
+    pyenv install "$VERSION"
+  fi
 fi
 
 if ! test -f .python-version; then
